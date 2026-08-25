@@ -1,89 +1,284 @@
-import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Download } from "lucide-react";
 
-import { SiteHeader } from "@/components/site-header";
 import { SectionHeading } from "@/components/section-heading";
+import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
 import { portfolio } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
-function ActionLink({ href, label, external = false, variant = "outline" }: { href: string; label: string; external?: boolean; variant?: "default" | "outline" | "ghost" }) {
-  if (!href) return <span className={cn(buttonVariants({ variant }), "h-10 cursor-not-allowed px-4 opacity-45")} title={`${label} link needed`}>{label}</span>;
-  return <a className={cn(buttonVariants({ variant }), "h-10 px-4")} href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>{label}{external && <ArrowUpRight aria-hidden="true" />}</a>;
+function ActionLink({
+  href,
+  label,
+  external = false,
+  primary = false,
+}: {
+  href: string;
+  label: string;
+  external?: boolean;
+  primary?: boolean;
+}) {
+  if (!href) {
+    return (
+      <span className="font-mono text-sm text-muted-foreground/50">
+        {label} unavailable
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      className={cn(
+        buttonVariants({ variant: primary ? "default" : "outline" }),
+        "h-11 rounded-full px-5 text-base",
+      )}
+    >
+      {label}
+      {external && <ArrowUpRight aria-hidden="true" />}
+    </a>
+  );
 }
 
 export default function Home() {
   return (
     <>
       <SiteHeader />
+
       <main id="main-content">
-        <section className="w-full border-b border-border px-6 py-14 md:px-[6vw] md:py-20 lg:py-24">
-          <div className="grid min-h-[calc(100svh-12rem)] items-stretch gap-12 lg:grid-cols-[minmax(0,1.65fr)_minmax(20rem,0.55fr)] lg:gap-[6vw]">
-            <div className="flex flex-col justify-between">
-              <div>
-                <p className="mb-8 font-mono text-base font-medium uppercase tracking-[0.18em] text-muted-foreground">Software engineer · New York / Boston</p>
-                <h1 className="max-w-[10ch] text-balance text-6xl font-semibold leading-[0.86] tracking-[-0.065em] sm:text-8xl md:text-[clamp(7rem,9vw,14rem)]">TJ Gribbin</h1>
-                <p className="mt-9 max-w-[52rem] text-balance text-2xl font-medium leading-[1.08] tracking-[-0.035em] text-foreground/85 sm:text-3xl lg:text-[clamp(2rem,2.35vw,3.5rem)]">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
-              </div>
-              <div className="mt-14 border-t border-border pt-8 lg:mt-20">
-                <p className="max-w-4xl text-pretty text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">{portfolio.introduction}</p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {portfolio.heroLinks.map((link, index) => <ActionLink key={link.label} {...link} variant={index === 0 ? "default" : "outline"} />)}
-                </div>
-              </div>
-            </div>
-            <aside className="flex flex-col justify-between border-t border-border pt-7 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0" aria-label="Profile summary">
-              <div>
-                <p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">Profile / 2026</p>
-                <dl className="mt-8 divide-y divide-border border-y border-border">
-                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Education</dt><dd className="mt-2 text-xl font-medium leading-snug">B.S. Computer Science<br /><span className="text-muted-foreground">Northeastern University</span></dd></div>
-                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Graduation</dt><dd className="mt-2 text-xl font-medium">Expected June 2027</dd></div>
-                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Focus</dt><dd className="mt-2 text-xl font-medium">Backend · Full-stack<br />Software engineering</dd></div>
-                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Experience</dt><dd className="mt-2 text-xl font-medium">2 engineering internships</dd></div>
-                </dl>
-              </div>
-              <a href="#experience" className="mt-10 inline-flex w-fit items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground">Explore selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
-            </aside>
+        <section className="page-grid border-b border-border py-16 md:py-24 lg:py-28">
+          <div className="lg:col-span-8">
+            <p className="eyebrow">
+              <span className="inline-block size-2 rounded-full bg-[var(--signal)]" />
+              Software engineer · New York / Boston
+            </p>
+            <h1 className="mt-9 max-w-[8ch] text-[clamp(4.75rem,9vw,11.5rem)] font-semibold leading-[0.82] tracking-[-0.075em]">
+              TJ Gribbin
+            </h1>
+            <p className="mt-10 max-w-[25ch] text-balance text-[clamp(2rem,3.25vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.045em] text-foreground/88">
+              I build dependable software for real people.
+            </p>
           </div>
+
+          <div className="mt-14 flex flex-col justify-end lg:col-span-4 lg:mt-0 lg:border-l lg:border-border lg:pl-[4vw]">
+            <p className="max-w-2xl text-xl leading-9 text-muted-foreground lg:text-2xl lg:leading-10">
+              {portfolio.introduction}
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              {portfolio.heroLinks.map((link, index) => (
+                <ActionLink key={link.label} {...link} primary={index === 0} />
+              ))}
+            </div>
+          </div>
+
+          <dl className="mt-20 grid border-y border-border sm:grid-cols-2 lg:col-span-12 lg:grid-cols-4">
+            {[
+              ["Education", "Northeastern University"],
+              ["Degree", "B.S. Computer Science · 2027"],
+              ["Experience", "2 software engineering internships"],
+              ["Focus", "Backend · Full-stack"],
+            ].map(([term, detail]) => (
+              <div
+                key={term}
+                className="border-b border-border py-6 last:border-b-0 sm:nth-[2]:border-b-0 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 lg:not-last:px-7 lg:first:pl-0"
+              >
+                <dt className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                  {term}
+                </dt>
+                <dd className="mt-2 text-lg font-medium">{detail}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <a
+            href="#experience"
+            className="mt-8 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground lg:col-span-12"
+          >
+            Selected work <ArrowDown className="size-4" aria-hidden="true" />
+          </a>
         </section>
 
         <section id="experience" className="section-shell scroll-mt-24">
-          <SectionHeading eyebrow="01 / Experience" title="Engineering in practice." description="Professional software engineering experience across advertising technology and tournament software." />
-          <div className="divide-y divide-border border-y border-border">
-            {portfolio.experience.map((role) => (
-              <article key={role.company} className="grid gap-8 py-11 md:grid-cols-[0.8fr_1.7fr] md:gap-[6vw] md:py-16">
-                <div><h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">{role.company}</h3><p className="mt-2 text-lg text-muted-foreground">{role.role}</p><p className="mt-4 font-mono text-base uppercase tracking-wider text-muted-foreground">{role.dates}</p></div>
-                <div><p className="max-w-4xl text-xl leading-9 text-foreground/85">{role.summary}</p><ul className="mt-7 max-w-4xl space-y-4 text-lg leading-8 text-muted-foreground">{role.highlights.map((highlight) => <li key={highlight} className="flex gap-4"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-foreground/60" />{highlight}</li>)}</ul></div>
+          <SectionHeading
+            eyebrow="01 / Experience"
+            title="Production work, measurable reach."
+            description="Engineering experience building full-stack tools, backend integrations, and real-time systems used in production."
+          />
+
+          <div className="border-t border-border">
+            {portfolio.experience.map((role, index) => (
+              <article
+                key={role.company}
+                className="grid gap-7 border-b border-border py-12 lg:grid-cols-12 lg:gap-8 lg:py-16"
+              >
+                <p className="font-mono text-sm text-[var(--signal)] lg:col-span-1">
+                  0{index + 1}
+                </p>
+                <div className="lg:col-span-4">
+                  <h3 className="text-3xl font-semibold tracking-[-0.035em] lg:text-4xl">
+                    {role.company}
+                  </h3>
+                  <p className="mt-3 text-lg leading-7 text-muted-foreground">
+                    {role.role}
+                  </p>
+                  <p className="mt-5 font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground">
+                    {role.dates}
+                  </p>
+                </div>
+                <div className="lg:col-span-7 lg:pl-[3vw]">
+                  <p className="max-w-4xl text-xl font-medium leading-9 text-foreground/85 lg:text-2xl lg:leading-10">
+                    {role.summary}
+                  </p>
+                  <ul className="mt-8 max-w-4xl space-y-5 text-lg leading-8 text-muted-foreground">
+                    {role.highlights.map((highlight) => (
+                      <li key={highlight} className="grid grid-cols-[1rem_1fr] gap-3">
+                        <ArrowRight className="mt-2 size-4 text-[var(--signal)]" aria-hidden="true" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
         </section>
 
         <section id="projects" className="section-shell scroll-mt-24">
-          <SectionHeading eyebrow="02 / Projects" title="Selected projects." description="A mix of applied AI, full-stack product work, hackathon building, and computer vision research." />
-          <div className="grid gap-px overflow-hidden border-y border-border bg-border md:grid-cols-2">
+          <SectionHeading
+            eyebrow="02 / Selected projects"
+            title="Built to solve something specific."
+            description="Product engineering, applied AI, hackathon work, and computer vision research."
+          />
+
+          <div className="border-t border-border">
             {portfolio.projects.map((project, index) => (
-              <article key={project.name} className="group flex min-h-[24rem] flex-col bg-background p-8 sm:p-11 lg:min-h-[28rem] lg:p-12">
-                <div className="flex items-start justify-between gap-4"><span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>{project.href ? <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.name}`} className="rounded-md p-1 text-muted-foreground transition hover:-translate-y-0.5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><ArrowUpRight className="size-5" /></a> : <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60">Link needed</span>}</div>
-                <div className="mt-auto pt-14"><p className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-4 text-3xl font-semibold tracking-tight lg:text-4xl">{project.name}</h3><p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground lg:text-xl lg:leading-9">{project.summary}</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-sm text-foreground/70">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
+              <article
+                key={project.name}
+                className="project-row group grid gap-6 border-b border-border py-10 md:grid-cols-12 md:items-start md:gap-8 lg:py-14"
+              >
+                <p className="font-mono text-sm text-muted-foreground md:col-span-1">
+                  0{index + 1}
+                </p>
+                <div className="md:col-span-4">
+                  <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--signal)]">
+                    {project.category}
+                  </p>
+                  <h3 className="mt-3 text-3xl font-semibold tracking-[-0.035em] lg:text-4xl">
+                    {project.name}
+                  </h3>
+                </div>
+                <div className="md:col-span-5">
+                  <p className="max-w-3xl text-lg leading-8 text-muted-foreground lg:text-xl lg:leading-9">
+                    {project.summary}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-foreground/65">
+                    {project.technologies.map((technology) => (
+                      <span key={technology}>{technology}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-start md:col-span-2 md:justify-end">
+                  {project.href ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-base font-medium transition-colors group-hover:text-[var(--signal)]"
+                    >
+                      View project <ArrowUpRight className="size-4" />
+                    </a>
+                  ) : (
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground/50">
+                      Details soon
+                    </span>
+                  )}
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="about" className="section-shell scroll-mt-24">
-          <SectionHeading eyebrow="03 / About" title="A nontraditional path into software." />
-          <div className="grid gap-10 border-t border-border pt-12 md:grid-cols-[1fr_2fr] md:gap-16"><p className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">Suffolk County → Northeastern</p><div className="max-w-3xl space-y-6 text-xl leading-9 text-foreground/80 lg:text-2xl lg:leading-10">{portfolio.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
+        <section className="border-y border-border bg-muted/40">
+          <div className="page-grid py-20 md:py-24">
+            <div className="lg:col-span-3">
+              <p className="eyebrow">Technical toolkit</p>
+            </div>
+            <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:col-span-9 lg:mt-0 lg:grid-cols-3">
+              {portfolio.skills.map((group) => (
+                <div key={group.label}>
+                  <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                    {group.label}
+                  </h3>
+                  <p className="mt-4 text-xl leading-9">{group.items.join(" · ")}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
-        <section id="resume" className="section-shell scroll-mt-24">
-          <div className="rounded-2xl bg-foreground px-8 py-12 text-background sm:px-12 sm:py-16 md:flex md:items-center md:justify-between md:gap-12 lg:px-16 lg:py-20">
-            <div><p className="font-mono text-sm uppercase tracking-[0.18em] text-background/60">Résumé</p><h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">The concise version.</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-background/65">Experience, education, and technical work in one page.</p></div>
-            <div className="mt-7 shrink-0 md:mt-0">{portfolio.resumeHref ? <a className={cn(buttonVariants({ variant: "secondary" }), "h-11 px-5")} href={portfolio.resumeHref} target="_blank">View résumé <Download aria-hidden="true" /></a> : <span className="inline-flex h-11 items-center rounded-lg border border-background/20 px-5 text-sm text-background/60">PDF needed</span>}</div>
+        <section id="about" className="section-shell scroll-mt-24">
+          <SectionHeading eyebrow="03 / About" title="A path built through momentum." />
+          <div className="grid gap-10 border-t border-border pt-12 lg:grid-cols-12 lg:gap-8">
+            <p className="eyebrow lg:col-span-4">Suffolk County → Northeastern</p>
+            <div className="max-w-5xl space-y-7 text-2xl leading-[1.55] tracking-[-0.015em] text-foreground/80 lg:col-span-8 lg:text-3xl">
+              {portfolio.about.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="resume" className="px-6 py-16 md:px-[5vw] md:py-20">
+          <div className="grid gap-12 bg-foreground px-8 py-12 text-background sm:px-12 sm:py-16 lg:grid-cols-12 lg:items-end lg:px-[5vw] lg:py-20">
+            <div className="lg:col-span-8">
+              <p className="font-mono text-sm uppercase tracking-[0.18em] text-background/60">
+                Résumé / PDF
+              </p>
+              <h2 className="mt-5 max-w-[12ch] text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
+                The complete one-page version.
+              </h2>
+            </div>
+            <div className="lg:col-span-4 lg:text-right">
+              <p className="mb-7 text-lg leading-8 text-background/65">
+                Experience, education, projects, and technical skills.
+              </p>
+              <a
+                href={portfolio.resumeHref}
+                target="_blank"
+                className={cn(
+                  buttonVariants({ variant: "secondary" }),
+                  "h-12 rounded-full px-6 text-base",
+                )}
+              >
+                View résumé <Download aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer id="contact" className="border-t border-border"><div className="w-full px-6 py-16 md:flex md:items-end md:justify-between md:px-[6vw]"><div><p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">Let&apos;s connect</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">TJ Gribbin</h2></div><div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-base md:mt-0">{portfolio.footerLinks.map((link) => link.href ? <a key={link.label} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} className="text-muted-foreground transition-colors hover:text-foreground">{link.label}</a> : <span key={link.label} className="text-muted-foreground/45" title={`${link.label} link needed`}>{link.label}</span>)}</div></div></footer>
+      <footer id="contact" className="border-t border-border">
+        <div className="flex w-full flex-col gap-8 px-6 py-14 md:flex-row md:items-end md:justify-between md:px-[5vw]">
+          <div>
+            <p className="eyebrow">Let&apos;s connect</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em]">TJ Gribbin</h2>
+          </div>
+          <div className="flex flex-wrap gap-x-8 gap-y-3 text-lg">
+            {portfolio.footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

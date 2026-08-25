@@ -14,6 +14,11 @@ export const portfolio = {
     { name: "Signature forgery detection", category: "Computer vision research", summary: "A custom CNN for writer-independent signature forgery detection that achieved approximately 91% classification accuracy on unseen test data. Presented at the SUNY Undergraduate Research Conference.", technologies: ["Python", "TensorFlow", "NumPy", "Pandas", "CNN"], href: "" },
   ],
   about: ["I began my computer science education at Suffolk County Community College, where I served as CS Club president, worked as a teaching assistant, participated in student research, and graduated with an A.S. in Computer Science in 2025.", "I’m now pursuing a B.S. in Computer Science at Northeastern University, with an expected graduation in June 2027. I’m especially interested in backend, full-stack, and software engineering roles where I can build dependable systems and useful products."],
+  skills: [
+    { label: "Languages", items: ["Java", "Python", "TypeScript", "JavaScript", "C"] },
+    { label: "Application", items: ["Node.js", "Next.js", "React", "Express", "Tailwind CSS"] },
+    { label: "Data & infrastructure", items: ["PostgreSQL", "MySQL", "Redis", "AWS", "Terraform", "Docker"] },
+  ],
   resumeHref: "/Timothy-Gribbin-Resume-2026.pdf",
   footerLinks: [{ label: "Email", href: "mailto:timothyjgribbin@gmail.com" }, { label: "GitHub", href: "https://github.com/timothygribbin", external: true }, { label: "LinkedIn", href: "https://www.linkedin.com/in/timothy-gribbin/", external: true }] satisfies Link[],
 };
