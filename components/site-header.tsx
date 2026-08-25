@@ -22,7 +22,19 @@ export function SiteHeader() {
           >
             TJ<span className="text-[var(--signal)]">.</span>
           </Link>
-          <nav aria-label="Mobile navigation" className="flex items-center gap-2 sm:hidden">
+          <nav
+            aria-label="Mobile navigation"
+            className="flex flex-wrap items-center justify-end gap-2 sm:hidden"
+          >
+            <Link
+              href="/#experience"
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "h-10 rounded-full px-4 text-sm text-muted-foreground",
+              )}
+            >
+              Experience
+            </Link>
             <Link
               href="/#projects"
               className={cn(
@@ -30,7 +42,16 @@ export function SiteHeader() {
                 "h-10 rounded-full px-4 text-sm text-muted-foreground",
               )}
             >
-              Work
+              Projects
+            </Link>
+            <Link
+              href="/#about"
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "h-10 rounded-full px-4 text-sm text-muted-foreground",
+              )}
+            >
+              About
             </Link>
             <Link
               href="/#contact"
