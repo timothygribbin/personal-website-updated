@@ -27,7 +27,7 @@ function ActionLink({
     <a
       href={href}
       target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
+      rel={external ? "noreferrer noopener" : undefined}
       className={cn(
         buttonVariants({ variant: "outline" }),
         "h-12 rounded-full px-6 text-lg",
@@ -185,7 +185,7 @@ export default function Home() {
                     <a
                       href={project.href}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noreferrer noopener"
                       className="inline-flex items-center gap-2 text-base font-medium transition-colors group-hover:text-[var(--signal)]"
                     >
                       View project <ArrowUpRight className="size-4" />

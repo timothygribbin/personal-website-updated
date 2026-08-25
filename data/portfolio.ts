@@ -25,7 +25,7 @@ export const portfolio = {
       summary:
         "Built full-stack tools and third-party integrations supporting clinical data workflows for more than 6,500 dental practices.",
       highlights: [
-        "Built and launched a self-service Connector Console serving 6,500+ dental practices with TypeScript, Node.js, and React, exposing versions, regional distribution, platform roles, installers, and activation keys.",
+        "Built a self-service Connector Console serving 6,500+ dental practices with TypeScript, Node.js, and React, exposing versions, regional distribution, platform roles, installers, and activation keys.",
         "Improved tooling used by 200+ employees with dark mode, standardized PostgreSQL location IDs, and an end-to-end notes feature spanning the frontend, REST APIs, and database persistence.",
       ],
     },

@@ -56,7 +56,7 @@ export default function ResumePage() {
                 <a
                   href={portfolio.resumeHref}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                   className="inline-flex items-center gap-2 px-2 py-2 text-base text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Open original <ExternalLink className="size-4" aria-hidden="true" />
@@ -84,7 +84,7 @@ export default function ResumePage() {
                 key={link.href}
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer noopener" : undefined}
                 aria-label={link.label}
                 title={link.label}
                 className="absolute z-10 rounded-sm transition-colors hover:bg-[var(--signal)]/15 focus-visible:bg-[var(--signal)]/20 focus-visible:outline-2 focus-visible:outline-[var(--signal)]"
