@@ -151,7 +151,7 @@
 }
 
 @layer components {
-  .section-shell { @apply w-full px-6 py-28 md:px-[6vw] md:py-36 lg:py-44; }
+  .section-shell { @apply w-full border-b border-border px-6 py-24 md:px-[6vw] md:py-28 lg:py-32; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -16,24 +16,41 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="main-content">
-        <section className="flex min-h-[calc(100svh-5rem)] w-full flex-col justify-center px-6 py-20 md:px-[6vw]">
-          <div className="w-full max-w-[min(88vw,120rem)]">
-            <p className="mb-8 font-mono text-base font-medium uppercase tracking-[0.18em] text-muted-foreground">Software engineer · New York / Boston</p>
-            <h1 className="text-balance text-6xl font-semibold leading-[0.86] tracking-[-0.065em] sm:text-8xl md:text-[clamp(8rem,11vw,18rem)]">TJ Gribbin</h1>
-            <p className="mt-10 max-w-[70rem] text-balance text-2xl font-medium leading-snug tracking-tight text-foreground/80 sm:text-3xl md:text-[clamp(2rem,2.5vw,4rem)]">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
-            <p className="mt-8 max-w-5xl text-pretty text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10 lg:text-3xl lg:leading-[1.45]">{portfolio.introduction}</p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              {portfolio.heroLinks.map((link, index) => <ActionLink key={link.label} {...link} variant={index === 0 ? "default" : "outline"} />)}
+        <section className="w-full border-b border-border px-6 py-14 md:px-[6vw] md:py-20 lg:py-24">
+          <div className="grid min-h-[calc(100svh-12rem)] items-stretch gap-12 lg:grid-cols-[minmax(0,1.65fr)_minmax(20rem,0.55fr)] lg:gap-[6vw]">
+            <div className="flex flex-col justify-between">
+              <div>
+                <p className="mb-8 font-mono text-base font-medium uppercase tracking-[0.18em] text-muted-foreground">Software engineer · New York / Boston</p>
+                <h1 className="max-w-[10ch] text-balance text-6xl font-semibold leading-[0.86] tracking-[-0.065em] sm:text-8xl md:text-[clamp(7rem,9vw,14rem)]">TJ Gribbin</h1>
+                <p className="mt-9 max-w-[52rem] text-balance text-2xl font-medium leading-[1.08] tracking-[-0.035em] text-foreground/85 sm:text-3xl lg:text-[clamp(2rem,2.35vw,3.5rem)]">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
+              </div>
+              <div className="mt-14 border-t border-border pt-8 lg:mt-20">
+                <p className="max-w-4xl text-pretty text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10">{portfolio.introduction}</p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {portfolio.heroLinks.map((link, index) => <ActionLink key={link.label} {...link} variant={index === 0 ? "default" : "outline"} />)}
+                </div>
+              </div>
             </div>
+            <aside className="flex flex-col justify-between border-t border-border pt-7 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0" aria-label="Profile summary">
+              <div>
+                <p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">Profile / 2026</p>
+                <dl className="mt-8 divide-y divide-border border-y border-border">
+                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Education</dt><dd className="mt-2 text-xl font-medium leading-snug">B.S. Computer Science<br /><span className="text-muted-foreground">Northeastern University</span></dd></div>
+                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Graduation</dt><dd className="mt-2 text-xl font-medium">Expected June 2027</dd></div>
+                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Focus</dt><dd className="mt-2 text-xl font-medium">Backend · Full-stack<br />Software engineering</dd></div>
+                  <div className="py-6"><dt className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Experience</dt><dd className="mt-2 text-xl font-medium">2 engineering internships</dd></div>
+                </dl>
+              </div>
+              <a href="#experience" className="mt-10 inline-flex w-fit items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground">Explore selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
+            </aside>
           </div>
-          <a href="#experience" className="mt-16 inline-flex w-fit items-center gap-2 font-mono text-base uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground lg:mt-20">Selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
         </section>
 
         <section id="experience" className="section-shell scroll-mt-24">
           <SectionHeading eyebrow="01 / Experience" title="Engineering in practice." description="Professional software engineering experience across advertising technology and tournament software." />
           <div className="divide-y divide-border border-y border-border">
             {portfolio.experience.map((role) => (
-              <article key={role.company} className="grid gap-6 py-11 md:grid-cols-[1fr_2fr] md:gap-16 md:py-16">
+              <article key={role.company} className="grid gap-8 py-11 md:grid-cols-[0.8fr_1.7fr] md:gap-[6vw] md:py-16">
                 <div><h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">{role.company}</h3><p className="mt-2 text-lg text-muted-foreground">{role.role}</p><p className="mt-4 font-mono text-base uppercase tracking-wider text-muted-foreground">{role.dates}</p></div>
                 <div><p className="max-w-4xl text-xl leading-9 text-foreground/85">{role.summary}</p><ul className="mt-7 max-w-4xl space-y-4 text-lg leading-8 text-muted-foreground">{role.highlights.map((highlight) => <li key={highlight} className="flex gap-4"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-foreground/60" />{highlight}</li>)}</ul></div>
               </article>
@@ -43,11 +60,11 @@ export default function Home() {
 
         <section id="projects" className="section-shell scroll-mt-24">
           <SectionHeading eyebrow="02 / Projects" title="Selected projects." description="A mix of applied AI, full-stack product work, hackathon building, and computer vision research." />
-          <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-2">
+          <div className="grid gap-px overflow-hidden border-y border-border bg-border md:grid-cols-2">
             {portfolio.projects.map((project, index) => (
-              <article key={project.name} className="group flex min-h-[28rem] flex-col bg-background p-8 sm:p-11 lg:min-h-[32rem] lg:p-14">
+              <article key={project.name} className="group flex min-h-[24rem] flex-col bg-background p-8 sm:p-11 lg:min-h-[28rem] lg:p-12">
                 <div className="flex items-start justify-between gap-4"><span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>{project.href ? <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.name}`} className="rounded-md p-1 text-muted-foreground transition hover:-translate-y-0.5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><ArrowUpRight className="size-5" /></a> : <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60">Link needed</span>}</div>
-                <div className="mt-auto pt-20"><p className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-4 text-3xl font-semibold tracking-tight lg:text-4xl">{project.name}</h3><p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground lg:text-xl lg:leading-9">{project.summary}</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-sm text-foreground/70">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
+                <div className="mt-auto pt-14"><p className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-4 text-3xl font-semibold tracking-tight lg:text-4xl">{project.name}</h3><p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground lg:text-xl lg:leading-9">{project.summary}</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-sm text-foreground/70">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
               </article>
             ))}
           </div>
