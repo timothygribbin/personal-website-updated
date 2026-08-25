@@ -16,17 +16,17 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="main-content">
-        <section className="mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-[90rem] flex-col justify-center px-6 py-24 md:px-12 lg:px-16 xl:px-20">
-          <div className="max-w-6xl">
+        <section className="flex min-h-[calc(100svh-5rem)] w-full flex-col justify-center px-6 py-20 md:px-[6vw]">
+          <div className="w-full max-w-[min(88vw,120rem)]">
             <p className="mb-8 font-mono text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Software engineer · New York / Boston</p>
-            <h1 className="text-balance text-6xl font-semibold leading-[0.92] tracking-[-0.06em] sm:text-8xl lg:text-[8.5rem] xl:text-[10rem]">TJ Gribbin</h1>
-            <p className="mt-9 max-w-5xl text-balance text-2xl font-medium leading-snug tracking-tight text-foreground/80 sm:text-3xl lg:text-4xl">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
-            <p className="mt-8 max-w-3xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">{portfolio.introduction}</p>
+            <h1 className="text-balance text-6xl font-semibold leading-[0.86] tracking-[-0.065em] sm:text-8xl md:text-[clamp(8rem,11vw,18rem)]">TJ Gribbin</h1>
+            <p className="mt-10 max-w-[70rem] text-balance text-2xl font-medium leading-snug tracking-tight text-foreground/80 sm:text-3xl md:text-[clamp(2rem,2.5vw,4rem)]">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
+            <p className="mt-8 max-w-4xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">{portfolio.introduction}</p>
             <div className="mt-10 flex flex-wrap gap-3">
               {portfolio.heroLinks.map((link, index) => <ActionLink key={link.label} {...link} variant={index === 0 ? "default" : "outline"} />)}
             </div>
           </div>
-          <a href="#experience" className="mt-24 inline-flex w-fit items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground">Selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
+          <a href="#experience" className="mt-16 inline-flex w-fit items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground lg:mt-20">Selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
         </section>
 
         <section id="experience" className="section-shell scroll-mt-24">
@@ -66,7 +66,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="contact" className="border-t border-border"><div className="mx-auto max-w-[90rem] px-6 py-16 md:flex md:items-end md:justify-between md:px-12 lg:px-16 xl:px-20"><div><p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">Let&apos;s connect</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">TJ Gribbin</h2></div><div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-base md:mt-0">{portfolio.footerLinks.map((link) => link.href ? <a key={link.label} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} className="text-muted-foreground transition-colors hover:text-foreground">{link.label}</a> : <span key={link.label} className="text-muted-foreground/45" title={`${link.label} link needed`}>{link.label}</span>)}</div></div></footer>
+      <footer id="contact" className="border-t border-border"><div className="w-full px-6 py-16 md:flex md:items-end md:justify-between md:px-[6vw]"><div><p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">Let&apos;s connect</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">TJ Gribbin</h2></div><div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-base md:mt-0">{portfolio.footerLinks.map((link) => link.href ? <a key={link.label} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} className="text-muted-foreground transition-colors hover:text-foreground">{link.label}</a> : <span key={link.label} className="text-muted-foreground/45" title={`${link.label} link needed`}>{link.label}</span>)}</div></div></footer>
     </>
   );
 }

@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -150,7 +150,7 @@
 }
 
 @layer components {
-  .section-shell { @apply mx-auto w-full max-w-[90rem] px-6 py-28 md:px-12 md:py-36 lg:px-16 lg:py-44 xl:px-20; }
+  .section-shell { @apply w-full px-6 py-28 md:px-[6vw] md:py-36 lg:py-44; }
 }
 
 @media (prefers-reduced-motion: reduce) {
