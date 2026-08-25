@@ -151,7 +151,7 @@
     --signal: oklch(0.75 0.14 245);
   }
 
-  .resume-frame {
+  .resume-preview {
     filter: brightness(0.78) contrast(0.94);
   }
 }
