@@ -201,26 +201,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-muted/40">
-          <div className="page-grid py-20 md:py-24">
-            <div className="lg:col-span-3">
-              <p className="eyebrow">Technical toolkit</p>
-            </div>
-            <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:col-span-9 lg:mt-0 lg:grid-cols-3">
-              {portfolio.skills.map((group) => (
-                <div key={group.label}>
-                  <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                    {group.label}
-                  </h3>
-                  <p className="mt-4 text-xl leading-9">{group.items.join(" · ")}</p>
-                </div>
-              ))}
-            </div>
+        <section id="toolkit" className="section-shell scroll-mt-24 bg-muted/20">
+          <SectionHeading
+            eyebrow="03 / Technical toolkit"
+            title="Tools I use to ship."
+            description="Languages, frameworks, databases, and infrastructure used across production work, coursework, and personal projects."
+          />
+          <div className="grid gap-10 bg-muted/40 px-7 py-9 sm:grid-cols-2 md:px-9 lg:grid-cols-3 lg:gap-14 lg:py-11">
+            {portfolio.skills.map((group) => (
+              <div key={group.label}>
+                <h3 className="font-mono text-sm uppercase tracking-[0.16em] text-[var(--signal)]">
+                  {group.label}
+                </h3>
+                <p className="mt-4 text-xl leading-9">{group.items.join(" · ")}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="about" className="section-shell scroll-mt-24">
-          <SectionHeading eyebrow="03 / About" title="A path built through momentum." />
+          <SectionHeading eyebrow="04 / About" title="A path built through momentum." />
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
             <p className="eyebrow lg:col-span-4">Suffolk County → Northeastern</p>
             <div className="space-y-7 text-xl leading-[1.6] tracking-[-0.015em] text-foreground/80 lg:col-span-8 lg:text-2xl">
@@ -233,7 +233,7 @@ export default function Home() {
 
         <section id="resume" className="section-shell scroll-mt-24">
           <SectionHeading
-            eyebrow="04 / Résumé"
+            eyebrow="05 / Résumé"
             title="Experience at a glance."
             description="A one-page overview of my education, engineering experience, projects, and technical skills."
           />
