@@ -16,26 +16,26 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="main-content">
-        <section className="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-6xl flex-col justify-center px-6 py-24 md:px-10 lg:px-12">
-          <div className="max-w-4xl">
-            <p className="mb-6 font-mono text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Software engineer · New York / Boston</p>
-            <h1 className="text-balance text-5xl font-semibold leading-[0.96] tracking-[-0.055em] sm:text-7xl lg:text-[6.5rem]">TJ Gribbin</h1>
-            <p className="mt-7 max-w-3xl text-balance text-xl font-medium leading-snug tracking-tight text-foreground/80 sm:text-2xl">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
-            <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">{portfolio.introduction}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
+        <section className="mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-[90rem] flex-col justify-center px-6 py-24 md:px-12 lg:px-16 xl:px-20">
+          <div className="max-w-6xl">
+            <p className="mb-8 font-mono text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Software engineer · New York / Boston</p>
+            <h1 className="text-balance text-6xl font-semibold leading-[0.92] tracking-[-0.06em] sm:text-8xl lg:text-[8.5rem] xl:text-[10rem]">TJ Gribbin</h1>
+            <p className="mt-9 max-w-5xl text-balance text-2xl font-medium leading-snug tracking-tight text-foreground/80 sm:text-3xl lg:text-4xl">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
+            <p className="mt-8 max-w-3xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">{portfolio.introduction}</p>
+            <div className="mt-10 flex flex-wrap gap-3">
               {portfolio.heroLinks.map((link, index) => <ActionLink key={link.label} {...link} variant={index === 0 ? "default" : "outline"} />)}
             </div>
           </div>
-          <a href="#experience" className="mt-20 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground">Selected work <ArrowDown className="size-3.5" aria-hidden="true" /></a>
+          <a href="#experience" className="mt-24 inline-flex w-fit items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground">Selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
         </section>
 
         <section id="experience" className="section-shell scroll-mt-24">
           <SectionHeading eyebrow="01 / Experience" title="Engineering in practice." description="Professional software engineering experience across advertising technology and tournament software." />
           <div className="divide-y divide-border border-y border-border">
             {portfolio.experience.map((role) => (
-              <article key={role.company} className="grid gap-5 py-9 md:grid-cols-[1fr_2fr] md:gap-12 md:py-12">
-                <div><h3 className="text-xl font-semibold tracking-tight">{role.company}</h3><p className="mt-1 text-sm text-muted-foreground">{role.role}</p><p className="mt-3 font-mono text-xs uppercase tracking-wider text-muted-foreground">{role.dates}</p></div>
-                <div><p className="max-w-2xl leading-7 text-foreground/80">{role.summary}</p><ul className="mt-5 space-y-3 text-sm leading-6 text-muted-foreground">{role.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="mt-2 size-1 shrink-0 rounded-full bg-foreground/60" />{highlight}</li>)}</ul></div>
+              <article key={role.company} className="grid gap-6 py-11 md:grid-cols-[1fr_2fr] md:gap-16 md:py-16">
+                <div><h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">{role.company}</h3><p className="mt-2 text-base text-muted-foreground">{role.role}</p><p className="mt-4 font-mono text-sm uppercase tracking-wider text-muted-foreground">{role.dates}</p></div>
+                <div><p className="max-w-3xl text-lg leading-8 text-foreground/80">{role.summary}</p><ul className="mt-7 max-w-3xl space-y-4 text-base leading-7 text-muted-foreground">{role.highlights.map((highlight) => <li key={highlight} className="flex gap-4"><span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-foreground/60" />{highlight}</li>)}</ul></div>
               </article>
             ))}
           </div>
@@ -45,9 +45,9 @@ export default function Home() {
           <SectionHeading eyebrow="02 / Projects" title="Selected projects." description="A mix of applied AI, full-stack product work, hackathon building, and computer vision research." />
           <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-2">
             {portfolio.projects.map((project, index) => (
-              <article key={project.name} className="group flex min-h-80 flex-col bg-background p-7 sm:p-9">
+              <article key={project.name} className="group flex min-h-[28rem] flex-col bg-background p-8 sm:p-11 lg:min-h-[32rem] lg:p-14">
                 <div className="flex items-start justify-between gap-4"><span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>{project.href ? <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.name}`} className="rounded-md p-1 text-muted-foreground transition hover:-translate-y-0.5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><ArrowUpRight className="size-5" /></a> : <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60">Link needed</span>}</div>
-                <div className="mt-auto pt-16"><p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-3 text-2xl font-semibold tracking-tight">{project.name}</h3><p className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground">{project.summary}</p><div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[11px] text-foreground/65">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
+                <div className="mt-auto pt-20"><p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-4 text-3xl font-semibold tracking-tight lg:text-4xl">{project.name}</h3><p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground lg:text-lg lg:leading-8">{project.summary}</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-foreground/65">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
               </article>
             ))}
           </div>
@@ -55,18 +55,18 @@ export default function Home() {
 
         <section id="about" className="section-shell scroll-mt-24">
           <SectionHeading eyebrow="03 / About" title="A nontraditional path into software." />
-          <div className="grid gap-10 border-t border-border pt-10 md:grid-cols-[1fr_2fr] md:gap-16"><p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">Suffolk County → Northeastern</p><div className="max-w-2xl space-y-5 text-lg leading-8 text-foreground/80">{portfolio.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
+          <div className="grid gap-10 border-t border-border pt-12 md:grid-cols-[1fr_2fr] md:gap-16"><p className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">Suffolk County → Northeastern</p><div className="max-w-3xl space-y-6 text-xl leading-9 text-foreground/80 lg:text-2xl lg:leading-10">{portfolio.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
         </section>
 
         <section id="resume" className="section-shell scroll-mt-24">
-          <div className="rounded-2xl bg-foreground px-7 py-10 text-background sm:px-10 sm:py-12 md:flex md:items-center md:justify-between md:gap-12">
-            <div><p className="font-mono text-xs uppercase tracking-[0.18em] text-background/60">Résumé</p><h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">The concise version.</h2><p className="mt-3 max-w-xl leading-7 text-background/65">Experience, education, and technical work in one page.</p></div>
+          <div className="rounded-2xl bg-foreground px-8 py-12 text-background sm:px-12 sm:py-16 md:flex md:items-center md:justify-between md:gap-12 lg:px-16 lg:py-20">
+            <div><p className="font-mono text-sm uppercase tracking-[0.18em] text-background/60">Résumé</p><h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">The concise version.</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-background/65">Experience, education, and technical work in one page.</p></div>
             <div className="mt-7 shrink-0 md:mt-0">{portfolio.resumeHref ? <a className={cn(buttonVariants({ variant: "secondary" }), "h-11 px-5")} href={portfolio.resumeHref} target="_blank">View résumé <Download aria-hidden="true" /></a> : <span className="inline-flex h-11 items-center rounded-lg border border-background/20 px-5 text-sm text-background/60">PDF needed</span>}</div>
           </div>
         </section>
       </main>
 
-      <footer id="contact" className="border-t border-border"><div className="mx-auto max-w-6xl px-6 py-12 md:flex md:items-end md:justify-between md:px-10 lg:px-12"><div><p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Let&apos;s connect</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">TJ Gribbin</h2></div><div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm md:mt-0">{portfolio.footerLinks.map((link) => link.href ? <a key={link.label} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} className="text-muted-foreground transition-colors hover:text-foreground">{link.label}</a> : <span key={link.label} className="text-muted-foreground/45" title={`${link.label} link needed`}>{link.label}</span>)}</div></div></footer>
+      <footer id="contact" className="border-t border-border"><div className="mx-auto max-w-[90rem] px-6 py-16 md:flex md:items-end md:justify-between md:px-12 lg:px-16 xl:px-20"><div><p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">Let&apos;s connect</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">TJ Gribbin</h2></div><div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-base md:mt-0">{portfolio.footerLinks.map((link) => link.href ? <a key={link.label} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} className="text-muted-foreground transition-colors hover:text-foreground">{link.label}</a> : <span key={link.label} className="text-muted-foreground/45" title={`${link.label} link needed`}>{link.label}</span>)}</div></div></footer>
     </>
   );
 }
