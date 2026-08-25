@@ -231,29 +231,29 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="resume" className="px-6 py-16 md:px-[5vw] md:py-20">
-          <div className="grid gap-12 border border-border bg-muted/45 px-8 py-12 text-foreground sm:px-12 sm:py-16 lg:grid-cols-12 lg:items-end lg:px-[5vw] lg:py-20">
-            <div className="lg:col-span-8">
-              <p className="font-mono text-sm uppercase tracking-[0.18em] text-[var(--signal)]">
-                Résumé / PDF
-              </p>
-              <h2 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
-                The complete one-page version.
-              </h2>
-            </div>
-            <div className="lg:col-span-4 lg:text-right">
-              <p className="mb-7 text-lg leading-8 text-muted-foreground">
-                Experience, education, projects, and technical skills.
-              </p>
+        <section id="resume" className="section-shell scroll-mt-24">
+          <SectionHeading
+            eyebrow="04 / Résumé"
+            title="Experience at a glance."
+            description="A one-page overview of my education, engineering experience, projects, and technical skills."
+          />
+          <div className="grid gap-8 bg-muted/40 px-7 py-8 md:grid-cols-12 md:items-center md:px-9 md:py-10">
+            <p className="text-lg leading-8 text-muted-foreground md:col-span-8">
+              View the résumé in a dedicated reader or download the original PDF.
+            </p>
+            <div className="flex flex-wrap gap-3 md:col-span-4 md:justify-end">
+              <a
+                href="/resume"
+                className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-full px-6 text-lg")}
+              >
+                View résumé <ArrowRight aria-hidden="true" />
+              </a>
               <a
                 href={portfolio.resumeHref}
-                target="_blank"
-                className={cn(
-                  buttonVariants({ variant: "default" }),
-                  "h-12 rounded-full px-6 text-base",
-                )}
+                download
+                className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-full px-6 text-lg")}
               >
-                View résumé <Download aria-hidden="true" />
+                Download <Download aria-hidden="true" />
               </a>
             </div>
           </div>
