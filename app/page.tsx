@@ -47,7 +47,7 @@ export default function Home() {
       <SiteHeader />
 
       <main id="main-content">
-        <section className="page-grid border-b border-border py-16 md:py-20 lg:py-24">
+        <section className="page-grid py-16 md:py-20 lg:py-24">
           <div className="lg:col-span-12">
             <p className="eyebrow">
               <span className="inline-block size-2 rounded-full bg-[var(--signal)]" />
@@ -75,7 +75,7 @@ export default function Home() {
             </div>
           </div>
 
-          <dl className="mt-16 grid border-y border-border sm:grid-cols-2 lg:col-span-12 lg:mt-20 lg:grid-cols-4">
+          <dl className="mt-16 grid bg-muted/40 px-6 sm:grid-cols-2 lg:col-span-12 lg:mt-20 lg:grid-cols-4 lg:px-8">
             {[
               ["Education", "Northeastern University"],
               ["Degree", "B.S. Computer Science · 2027"],
@@ -84,7 +84,7 @@ export default function Home() {
             ].map(([term, detail]) => (
               <div
                 key={term}
-                className="border-b border-border py-6 last:border-b-0 sm:nth-[2]:border-b-0 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 lg:not-last:px-7 lg:first:pl-0"
+                className="py-6 sm:pr-6 lg:px-7 lg:first:pl-0 lg:last:pr-0"
               >
                 <dt className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                   {term}
@@ -102,18 +102,18 @@ export default function Home() {
           </a>
         </section>
 
-        <section id="experience" className="section-shell scroll-mt-24">
+        <section id="experience" className="section-shell scroll-mt-24 bg-muted/20">
           <SectionHeading
             eyebrow="01 / Experience"
             title="Production work, measurable reach."
             description="Engineering experience building full-stack tools, backend integrations, and real-time systems used in production."
           />
 
-          <div className="border-t border-border">
+          <div className="divide-y divide-border">
             {portfolio.experience.map((role, index) => (
               <article
                 key={role.company}
-                className="grid gap-7 border-b border-border py-12 lg:grid-cols-12 lg:gap-8 lg:py-16"
+                className="grid gap-7 py-12 lg:grid-cols-12 lg:gap-8 lg:py-16"
               >
                 <p className="font-mono text-sm text-[var(--signal)] lg:col-span-1">
                   0{index + 1}
@@ -154,11 +154,11 @@ export default function Home() {
             description="Product engineering, applied AI, hackathon work, and computer vision research."
           />
 
-          <div className="border-t border-border">
+          <div className="divide-y divide-border">
             {portfolio.projects.map((project, index) => (
               <article
                 key={project.name}
-                className="project-row group grid gap-6 border-b border-border py-10 md:grid-cols-12 md:items-start md:gap-8 lg:py-14"
+                className="project-row group grid gap-6 py-10 md:grid-cols-12 md:items-start md:gap-8 lg:py-14"
               >
                 <p className="font-mono text-sm text-muted-foreground md:col-span-1">
                   0{index + 1}
@@ -202,7 +202,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-y border-border bg-muted/40">
+        <section className="bg-muted/40">
           <div className="page-grid py-20 md:py-24">
             <div className="lg:col-span-3">
               <p className="eyebrow">Technical toolkit</p>
@@ -222,7 +222,7 @@ export default function Home() {
 
         <section id="about" className="section-shell scroll-mt-24">
           <SectionHeading eyebrow="03 / About" title="A path built through momentum." />
-          <div className="grid gap-10 border-t border-border pt-12 lg:grid-cols-12 lg:gap-8">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
             <p className="eyebrow lg:col-span-4">Suffolk County → Northeastern</p>
             <div className="space-y-7 text-xl leading-[1.6] tracking-[-0.015em] text-foreground/80 lg:col-span-8 lg:text-2xl">
               {portfolio.about.map((paragraph) => (

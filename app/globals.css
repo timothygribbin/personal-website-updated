@@ -158,7 +158,7 @@
   }
 
   .section-shell {
-    @apply w-full border-b border-border px-6 py-20 md:px-[5vw] md:py-24 lg:py-28;
+    @apply w-full px-6 py-20 md:px-[5vw] md:py-24 lg:py-28;
   }
 
   .eyebrow {
