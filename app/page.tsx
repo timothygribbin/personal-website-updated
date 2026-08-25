@@ -56,19 +56,20 @@ export default function Home() {
             <h1 className="mt-9 text-[clamp(4.5rem,9.5vw,12rem)] font-semibold leading-[0.84] tracking-[-0.075em] sm:whitespace-nowrap">
               TJ Gribbin
             </h1>
-          </div>
-
-          <div className="mt-14 border-t border-border pt-9 lg:col-span-7 lg:mt-16 lg:pr-[4vw]">
-            <p className="max-w-[22ch] text-[clamp(2.25rem,3.35vw,4.75rem)] font-medium leading-[1.03] tracking-[-0.05em] text-foreground/88">
-              I build dependable software for real people.
+            <p className="mt-9 text-[clamp(1.65rem,2.3vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.035em] text-foreground/80">
+              Software Engineer <span className="text-muted-foreground">/</span>{" "}
+              Computer Science @ Northeastern University
             </p>
           </div>
 
-          <div className="mt-10 flex flex-col justify-start lg:col-span-5 lg:mt-16 lg:border-l lg:border-t lg:border-border lg:pl-[4vw] lg:pt-9">
-            <p className="max-w-4xl text-xl leading-9 text-muted-foreground lg:text-2xl lg:leading-10">
+          <div className="mt-12 lg:col-span-8 lg:mt-14 lg:pr-[4vw]">
+            <p className="max-w-6xl text-xl leading-9 text-muted-foreground lg:text-2xl lg:leading-10">
               {portfolio.introduction}
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+          </div>
+
+          <div className="mt-8 flex flex-col justify-end lg:col-span-4 lg:mt-14 lg:items-end">
+            <div className="flex flex-wrap gap-3 lg:justify-end">
               {portfolio.heroLinks.map((link, index) => (
                 <ActionLink key={link.label} {...link} primary={index === 0} />
               ))}
