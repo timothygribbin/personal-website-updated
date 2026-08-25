@@ -230,9 +230,9 @@ export default function Home() {
         </section>
 
         <section id="resume" className="px-6 py-16 md:px-[5vw] md:py-20">
-          <div className="grid gap-12 bg-foreground px-8 py-12 text-background sm:px-12 sm:py-16 lg:grid-cols-12 lg:items-end lg:px-[5vw] lg:py-20">
+          <div className="grid gap-12 border border-border bg-muted/45 px-8 py-12 text-foreground sm:px-12 sm:py-16 lg:grid-cols-12 lg:items-end lg:px-[5vw] lg:py-20">
             <div className="lg:col-span-8">
-              <p className="font-mono text-sm uppercase tracking-[0.18em] text-background/60">
+              <p className="font-mono text-sm uppercase tracking-[0.18em] text-[var(--signal)]">
                 Résumé / PDF
               </p>
               <h2 className="mt-5 max-w-[12ch] text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
@@ -240,14 +240,14 @@ export default function Home() {
               </h2>
             </div>
             <div className="lg:col-span-4 lg:text-right">
-              <p className="mb-7 text-lg leading-8 text-background/65">
+              <p className="mb-7 text-lg leading-8 text-muted-foreground">
                 Experience, education, projects, and technical skills.
               </p>
               <a
                 href={portfolio.resumeHref}
                 target="_blank"
                 className={cn(
-                  buttonVariants({ variant: "secondary" }),
+                  buttonVariants({ variant: "default" }),
                   "h-12 rounded-full px-6 text-base",
                 )}
               >
