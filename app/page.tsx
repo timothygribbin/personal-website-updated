@@ -10,12 +10,10 @@ function ActionLink({
   href,
   label,
   external = false,
-  primary = false,
 }: {
   href: string;
   label: string;
   external?: boolean;
-  primary?: boolean;
 }) {
   if (!href) {
     return (
@@ -31,8 +29,8 @@ function ActionLink({
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
       className={cn(
-        buttonVariants({ variant: primary ? "default" : "outline" }),
-        "h-11 rounded-full px-5 text-base",
+        buttonVariants({ variant: "outline" }),
+        "h-12 rounded-full px-6 text-lg",
       )}
     >
       {label}
@@ -70,8 +68,8 @@ export default function Home() {
 
           <div className="mt-8 flex flex-col justify-end lg:col-span-4 lg:mt-14 lg:items-end">
             <div className="flex flex-wrap gap-3 lg:justify-end">
-              {portfolio.heroLinks.map((link, index) => (
-                <ActionLink key={link.label} {...link} primary={index === 0} />
+              {portfolio.heroLinks.map((link) => (
+                <ActionLink key={link.label} {...link} />
               ))}
             </div>
           </div>
