@@ -45,28 +45,28 @@ export default function Home() {
       <SiteHeader />
 
       <main id="main-content">
-        <section className="page-grid py-16 md:py-20 lg:py-24">
+        <section className="page-grid py-24 md:py-32 lg:py-40">
           <div className="lg:col-span-12">
             <p className="eyebrow">
               <span className="inline-block size-2 rounded-full bg-[var(--signal)]" />
               Software engineer · New York / Boston
             </p>
-            <h1 className="mt-9 text-[clamp(4.5rem,9.5vw,12rem)] font-semibold leading-[0.84] tracking-[-0.075em] sm:whitespace-nowrap">
+            <h1 className="mt-12 text-[clamp(2.5rem,4vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] sm:whitespace-nowrap">
               TJ Gribbin
             </h1>
-            <p className="mt-9 text-[clamp(1.65rem,2.3vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.035em] text-foreground/80">
+            <p className="mt-12 max-w-[65rem] text-[clamp(1.2rem,1.15vw,1.6rem)] font-medium leading-[1.24] tracking-[-0.018em] text-foreground/80">
               Software Engineer <span className="text-muted-foreground">/</span>{" "}
               Computer Science @ Northeastern University
             </p>
           </div>
 
-          <div className="mt-12 lg:col-span-8 lg:mt-14 lg:pr-[4vw]">
+          <div className="mt-16 lg:col-span-8 lg:mt-20 lg:pr-[4vw]">
             <p className="max-w-6xl text-xl leading-9 text-muted-foreground lg:text-2xl lg:leading-10">
               {portfolio.introduction}
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col justify-end lg:col-span-4 lg:mt-14 lg:items-end">
+          <div className="mt-12 flex flex-col justify-end lg:col-span-4 lg:mt-20 lg:items-end">
             <div className="flex flex-wrap gap-3 lg:justify-end">
               {portfolio.heroLinks.map((link) => (
                 <ActionLink key={link.label} {...link} />
@@ -74,21 +74,21 @@ export default function Home() {
             </div>
           </div>
 
-          <dl className="mt-16 grid bg-muted/40 px-6 sm:grid-cols-2 lg:col-span-12 lg:mt-20 lg:grid-cols-4 lg:px-8">
+          <dl className="mt-24 grid sm:grid-cols-2 lg:col-span-12 lg:mt-32 xl:grid-cols-4">
             {[
               ["Education", "Northeastern University"],
-              ["Degree", "B.S. Computer Science · 2027"],
-              ["Experience", "2 software engineering internships"],
-              ["Focus", "Backend · Full-stack"],
+              ["Degrees", "B.S. Computer Science · Expected 2027\nA.S. Computer Science · 2025"],
+              ["Experience", "SWE Intern @ Videa · Backend Integrations\nSWE Intern @ Wrestling Reimagined · Full Stack"],
+              ["Focus", "Backend · Full-stack\nAI · Machine Learning"],
             ].map(([term, detail]) => (
               <div
                 key={term}
-                className="py-6 sm:pr-6 lg:px-7 lg:first:pl-0 lg:last:pr-0"
+                className="py-8 sm:pr-7 lg:px-8 lg:first:pl-0 lg:last:pr-0"
               >
-                <dt className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                <dt className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">
                   {term}
                 </dt>
-                <dd className="mt-2 text-lg font-medium">{detail}</dd>
+                <dd className="mt-3 whitespace-pre-line text-xl font-medium leading-8 lg:leading-9 xl:whitespace-pre">{detail}</dd>
               </div>
             ))}
           </dl>
@@ -201,13 +201,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="toolkit" className="section-shell scroll-mt-24 bg-muted/20">
+        <section id="toolkit" className="section-shell scroll-mt-24">
           <SectionHeading
             eyebrow="03 / Technical toolkit"
             title="Tools I use to ship."
             description="Languages, frameworks, databases, and infrastructure used across production work, coursework, and personal projects."
           />
-          <div className="grid gap-10 bg-muted/40 px-7 py-9 sm:grid-cols-2 md:px-9 lg:grid-cols-3 lg:gap-14 lg:py-11">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-14">
             {portfolio.skills.map((group) => (
               <div key={group.label}>
                 <h3 className="font-mono text-sm uppercase tracking-[0.16em] text-[var(--signal)]">
@@ -220,9 +220,9 @@ export default function Home() {
         </section>
 
         <section id="about" className="section-shell scroll-mt-24">
-          <SectionHeading eyebrow="04 / About" title="A path built through momentum." />
+          <SectionHeading eyebrow="04 / About" title="A nontraditional route into computer science." titleClassName="lg:whitespace-nowrap lg:text-5xl xl:text-6xl" />
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
-            <p className="eyebrow lg:col-span-4">Suffolk County → Northeastern</p>
+            <p className="eyebrow lg:col-span-4">Suffolk County Community College → Northeastern University</p>
             <div className="space-y-7 text-xl leading-[1.6] tracking-[-0.015em] text-foreground/80 lg:col-span-8 lg:text-2xl">
               {portfolio.about.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -237,7 +237,7 @@ export default function Home() {
             title="Experience at a glance."
             description="A one-page overview of my education, engineering experience, projects, and technical skills."
           />
-          <div className="grid gap-8 bg-muted/40 px-7 py-8 md:grid-cols-12 md:items-center md:px-9 md:py-10">
+          <div className="grid gap-8 md:grid-cols-12 md:items-center">
             <p className="text-lg leading-8 text-muted-foreground md:col-span-8">
               View the résumé in a dedicated reader or download the original PDF.
             </p>

@@ -123,11 +123,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground selection:bg-foreground selection:text-background;
+    @apply overflow-x-clip bg-background text-foreground selection:bg-foreground selection:text-background;
   }
   html {
     @apply font-sans;
-    font-size: clamp(17px, 0.68vw, 20px);
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 10px;
   }
 }
 
@@ -162,7 +168,7 @@
   }
 
   .section-shell {
-    @apply w-full px-6 py-20 md:px-[5vw] md:py-24 lg:py-28;
+    @apply w-full border-t border-border/60 px-6 py-20 md:px-[5vw] md:py-24 lg:py-28;
   }
 
   .eyebrow {
