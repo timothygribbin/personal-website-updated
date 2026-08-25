@@ -47,22 +47,25 @@ export default function Home() {
       <SiteHeader />
 
       <main id="main-content">
-        <section className="page-grid border-b border-border py-16 md:py-24 lg:py-28">
-          <div className="lg:col-span-8">
+        <section className="page-grid border-b border-border py-16 md:py-20 lg:py-24">
+          <div className="lg:col-span-12">
             <p className="eyebrow">
               <span className="inline-block size-2 rounded-full bg-[var(--signal)]" />
               Software engineer · New York / Boston
             </p>
-            <h1 className="mt-9 max-w-[8ch] text-[clamp(4.75rem,9vw,11.5rem)] font-semibold leading-[0.82] tracking-[-0.075em]">
+            <h1 className="mt-9 text-[clamp(4.5rem,9.5vw,12rem)] font-semibold leading-[0.84] tracking-[-0.075em] sm:whitespace-nowrap">
               TJ Gribbin
             </h1>
-            <p className="mt-10 max-w-[25ch] text-balance text-[clamp(2rem,3.25vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.045em] text-foreground/88">
+          </div>
+
+          <div className="mt-14 border-t border-border pt-9 lg:col-span-7 lg:mt-16 lg:pr-[4vw]">
+            <p className="max-w-[22ch] text-[clamp(2.25rem,3.35vw,4.75rem)] font-medium leading-[1.03] tracking-[-0.05em] text-foreground/88">
               I build dependable software for real people.
             </p>
           </div>
 
-          <div className="mt-14 flex flex-col justify-end lg:col-span-4 lg:mt-0 lg:border-l lg:border-border lg:pl-[4vw]">
-            <p className="max-w-2xl text-xl leading-9 text-muted-foreground lg:text-2xl lg:leading-10">
+          <div className="mt-10 flex flex-col justify-start lg:col-span-5 lg:mt-16 lg:border-l lg:border-t lg:border-border lg:pl-[4vw] lg:pt-9">
+            <p className="max-w-4xl text-xl leading-9 text-muted-foreground lg:text-2xl lg:leading-10">
               {portfolio.introduction}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
@@ -72,7 +75,7 @@ export default function Home() {
             </div>
           </div>
 
-          <dl className="mt-20 grid border-y border-border sm:grid-cols-2 lg:col-span-12 lg:grid-cols-4">
+          <dl className="mt-16 grid border-y border-border sm:grid-cols-2 lg:col-span-12 lg:mt-20 lg:grid-cols-4">
             {[
               ["Education", "Northeastern University"],
               ["Degree", "B.S. Computer Science · 2027"],
@@ -221,7 +224,7 @@ export default function Home() {
           <SectionHeading eyebrow="03 / About" title="A path built through momentum." />
           <div className="grid gap-10 border-t border-border pt-12 lg:grid-cols-12 lg:gap-8">
             <p className="eyebrow lg:col-span-4">Suffolk County → Northeastern</p>
-            <div className="max-w-5xl space-y-7 text-2xl leading-[1.55] tracking-[-0.015em] text-foreground/80 lg:col-span-8 lg:text-3xl">
+            <div className="space-y-7 text-xl leading-[1.6] tracking-[-0.015em] text-foreground/80 lg:col-span-8 lg:text-2xl">
               {portfolio.about.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -235,7 +238,7 @@ export default function Home() {
               <p className="font-mono text-sm uppercase tracking-[0.18em] text-[var(--signal)]">
                 Résumé / PDF
               </p>
-              <h2 className="mt-5 max-w-[12ch] text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
+              <h2 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
                 The complete one-page version.
               </h2>
             </div>
