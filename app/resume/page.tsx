@@ -25,8 +25,8 @@ export default function ResumePage() {
   return (
     <>
       <SiteHeader />
-      <main id="main-content" className="mx-auto grid w-full max-w-[112rem] gap-12 px-6 py-12 md:px-[5vw] md:py-16 lg:grid-cols-[minmax(17rem,0.48fr)_minmax(0,1.52fr)] lg:gap-[5vw] lg:py-20">
-        <aside className="lg:sticky lg:top-32 lg:self-start">
+      <main id="main-content" className="mx-auto w-full max-w-[90rem] px-6 py-12 md:px-[5vw] md:py-16 lg:py-20">
+        <div className="mx-auto max-w-[74.5rem]">
           <Link href="/" className="inline-flex items-center gap-2 text-base text-muted-foreground transition-colors hover:text-foreground">
             <ArrowLeft className="size-4" aria-hidden="true" /> Back to portfolio
           </Link>
@@ -41,7 +41,7 @@ export default function ResumePage() {
             Education, engineering experience, selected projects, and technical skills.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-3 lg:flex-col lg:items-start">
+          <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href={portfolio.resumeHref}
               download
@@ -59,12 +59,12 @@ export default function ResumePage() {
             </a>
           </div>
 
-          <p className="mt-12 max-w-sm text-sm leading-6 text-muted-foreground/75">
+          <p className="mt-7 max-w-xl text-sm leading-6 text-muted-foreground/75">
             Links in the preview open separately. The downloaded PDF retains its original formatting.
           </p>
-        </aside>
+        </div>
 
-        <section aria-label="Résumé preview" className="bg-muted/35 p-2 sm:p-4 lg:p-5">
+        <section aria-label="Résumé preview" className="mx-auto mt-12 max-w-[78rem] bg-muted/35 p-2 sm:p-4 lg:p-5">
           <div className="relative mx-auto w-full max-w-[74.5rem] shadow-2xl shadow-black/25">
             <Image
               src="/resume-preview.png"
