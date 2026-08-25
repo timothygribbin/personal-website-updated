@@ -39,13 +39,13 @@ export default function ResumePage() {
               <h1 className="mt-4 text-5xl font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl">
                 Résumé
               </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
+                Education, engineering experience, selected projects, and technical skills.
+              </p>
             </div>
 
             <div className="md:col-span-5">
-              <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-                Education, engineering experience, selected projects, and technical skills.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3 md:justify-end">
                 <a
                   href={portfolio.resumeHref}
                   download
@@ -62,7 +62,7 @@ export default function ResumePage() {
                   Open original <ExternalLink className="size-4" aria-hidden="true" />
                 </a>
               </div>
-              <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground/75">
+              <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground/75 md:ml-auto md:text-right">
                 Preview links open separately. Downloads retain the original formatting.
               </p>
             </div>
