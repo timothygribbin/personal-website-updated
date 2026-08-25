@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft, Download, ExternalLink } from "lucide-react";
 
 import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
@@ -25,25 +25,47 @@ export default function ResumePage() {
   return (
     <>
       <SiteHeader />
-      <main id="main-content" className="px-6 py-12 md:px-[5vw] md:py-16">
-        <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <Link href="/" className="inline-flex items-center gap-2 text-base text-muted-foreground transition-colors hover:text-foreground">
-              <ArrowLeft className="size-4" aria-hidden="true" /> Back to portfolio
-            </Link>
-            <h1 className="mt-6 text-5xl font-semibold tracking-[-0.055em] sm:text-7xl">Résumé</h1>
-          </div>
-          <a
-            href={portfolio.resumeHref}
-            download
-            className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-full px-6 text-lg")}
-          >
-            Download PDF <Download aria-hidden="true" />
-          </a>
-        </div>
+      <main id="main-content" className="mx-auto grid w-full max-w-[112rem] gap-12 px-6 py-12 md:px-[5vw] md:py-16 lg:grid-cols-[minmax(17rem,0.48fr)_minmax(0,1.52fr)] lg:gap-[5vw] lg:py-20">
+        <aside className="lg:sticky lg:top-32 lg:self-start">
+          <Link href="/" className="inline-flex items-center gap-2 text-base text-muted-foreground transition-colors hover:text-foreground">
+            <ArrowLeft className="size-4" aria-hidden="true" /> Back to portfolio
+          </Link>
 
-        <div className="mx-auto max-w-[74rem] bg-muted/45 p-2 sm:p-4 lg:p-6">
-          <div className="relative mx-auto max-w-[59.6rem] shadow-2xl shadow-black/20">
+          <p className="mt-14 font-mono text-sm uppercase tracking-[0.18em] text-[var(--signal)]">
+            PDF / One page
+          </p>
+          <h1 className="mt-4 text-5xl font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl">
+            Résumé
+          </h1>
+          <p className="mt-6 max-w-md text-lg leading-8 text-muted-foreground">
+            Education, engineering experience, selected projects, and technical skills.
+          </p>
+
+          <div className="mt-9 flex flex-wrap gap-3 lg:flex-col lg:items-start">
+            <a
+              href={portfolio.resumeHref}
+              download
+              className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-full px-6 text-lg")}
+            >
+              Download PDF <Download aria-hidden="true" />
+            </a>
+            <a
+              href={portfolio.resumeHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-2 py-2 text-base text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Open original <ExternalLink className="size-4" aria-hidden="true" />
+            </a>
+          </div>
+
+          <p className="mt-12 max-w-sm text-sm leading-6 text-muted-foreground/75">
+            Links in the preview open separately. The downloaded PDF retains its original formatting.
+          </p>
+        </aside>
+
+        <section aria-label="Résumé preview" className="bg-muted/35 p-2 sm:p-4 lg:p-5">
+          <div className="relative mx-auto w-full max-w-[74.5rem] shadow-2xl shadow-black/25">
             <Image
               src="/resume-preview.png"
               alt="TJ Gribbin's one-page software engineering résumé"
@@ -65,7 +87,7 @@ export default function ResumePage() {
               />
             ))}
           </div>
-        </div>
+        </section>
       </main>
     </>
   );
