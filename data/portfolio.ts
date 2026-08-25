@@ -13,7 +13,11 @@ export const portfolio = {
     { name: "HopperHelps", category: "1st place · HopperHacks", summary: "An AI-assisted journal and mood calendar that analyzes entries, visualizes emotional trends, and synchronizes sentiment data with user journals. Won 1st place among 230 participants.", technologies: ["OpenAI API", "Zustand", "Firebase Firestore"], href: "https://github.com/Algoltea/hopperhacksx" },
     { name: "Signature forgery detection", category: "Computer vision research", summary: "A custom CNN for writer-independent signature forgery detection that achieved approximately 91% classification accuracy on unseen test data. Presented at the SUNY Undergraduate Research Conference.", technologies: ["Python", "TensorFlow", "NumPy", "Pandas", "CNN"], href: "" },
   ],
-  about: ["I began my computer science education at Suffolk County Community College, where I served as CS Club president, worked as a teaching assistant, participated in student research, and graduated with an A.S. in Computer Science in 2025.", "I’m now pursuing a B.S. in Computer Science at Northeastern University, with an expected graduation in June 2027. I’m especially interested in backend, full-stack, and software engineering roles where I can build dependable systems and useful products."],
+  about: [
+    "My path into software engineering was not a straight line. After high school, I worked delivering pizza without a clear idea of what I wanted to pursue. I eventually started Harvard’s CS50, committing to it for one hour every day. That small, consistent habit became the turning point that convinced me to take computer science seriously.",
+    "I returned to school at Suffolk County Community College, where I became CS Club president, worked as a teaching assistant, participated in student research, and graduated with an A.S. in Computer Science in 2025. From there, I transferred to Northeastern University to continue toward a B.S. in Computer Science, expected in June 2027.",
+    "Along the way, I moved from learning fundamentals to building software in production through full-stack and backend-focused internships. I’m now looking for software engineering opportunities where I can keep that momentum going—working on dependable systems, useful products, and problems that reward curiosity and persistence.",
+  ],
   skills: [
     { label: "Languages", items: ["Java", "Python", "TypeScript", "JavaScript", "C"] },
     { label: "Application", items: ["Node.js", "Next.js", "React", "Express", "Tailwind CSS"] },
