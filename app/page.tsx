@@ -18,15 +18,15 @@ export default function Home() {
       <main id="main-content">
         <section className="flex min-h-[calc(100svh-5rem)] w-full flex-col justify-center px-6 py-20 md:px-[6vw]">
           <div className="w-full max-w-[min(88vw,120rem)]">
-            <p className="mb-8 font-mono text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">Software engineer · New York / Boston</p>
+            <p className="mb-8 font-mono text-base font-medium uppercase tracking-[0.18em] text-muted-foreground">Software engineer · New York / Boston</p>
             <h1 className="text-balance text-6xl font-semibold leading-[0.86] tracking-[-0.065em] sm:text-8xl md:text-[clamp(8rem,11vw,18rem)]">TJ Gribbin</h1>
             <p className="mt-10 max-w-[70rem] text-balance text-2xl font-medium leading-snug tracking-tight text-foreground/80 sm:text-3xl md:text-[clamp(2rem,2.5vw,4rem)]">Software Engineer <span className="text-muted-foreground">/</span> Computer Science @ Northeastern University</p>
-            <p className="mt-8 max-w-4xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">{portfolio.introduction}</p>
+            <p className="mt-8 max-w-5xl text-pretty text-xl leading-9 text-muted-foreground sm:text-2xl sm:leading-10 lg:text-3xl lg:leading-[1.45]">{portfolio.introduction}</p>
             <div className="mt-10 flex flex-wrap gap-3">
               {portfolio.heroLinks.map((link, index) => <ActionLink key={link.label} {...link} variant={index === 0 ? "default" : "outline"} />)}
             </div>
           </div>
-          <a href="#experience" className="mt-16 inline-flex w-fit items-center gap-2 font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground lg:mt-20">Selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
+          <a href="#experience" className="mt-16 inline-flex w-fit items-center gap-2 font-mono text-base uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground lg:mt-20">Selected work <ArrowDown className="size-4" aria-hidden="true" /></a>
         </section>
 
         <section id="experience" className="section-shell scroll-mt-24">
@@ -34,8 +34,8 @@ export default function Home() {
           <div className="divide-y divide-border border-y border-border">
             {portfolio.experience.map((role) => (
               <article key={role.company} className="grid gap-6 py-11 md:grid-cols-[1fr_2fr] md:gap-16 md:py-16">
-                <div><h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">{role.company}</h3><p className="mt-2 text-base text-muted-foreground">{role.role}</p><p className="mt-4 font-mono text-sm uppercase tracking-wider text-muted-foreground">{role.dates}</p></div>
-                <div><p className="max-w-3xl text-lg leading-8 text-foreground/80">{role.summary}</p><ul className="mt-7 max-w-3xl space-y-4 text-base leading-7 text-muted-foreground">{role.highlights.map((highlight) => <li key={highlight} className="flex gap-4"><span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-foreground/60" />{highlight}</li>)}</ul></div>
+                <div><h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">{role.company}</h3><p className="mt-2 text-lg text-muted-foreground">{role.role}</p><p className="mt-4 font-mono text-base uppercase tracking-wider text-muted-foreground">{role.dates}</p></div>
+                <div><p className="max-w-4xl text-xl leading-9 text-foreground/85">{role.summary}</p><ul className="mt-7 max-w-4xl space-y-4 text-lg leading-8 text-muted-foreground">{role.highlights.map((highlight) => <li key={highlight} className="flex gap-4"><span className="mt-3 size-1.5 shrink-0 rounded-full bg-foreground/60" />{highlight}</li>)}</ul></div>
               </article>
             ))}
           </div>
@@ -47,7 +47,7 @@ export default function Home() {
             {portfolio.projects.map((project, index) => (
               <article key={project.name} className="group flex min-h-[28rem] flex-col bg-background p-8 sm:p-11 lg:min-h-[32rem] lg:p-14">
                 <div className="flex items-start justify-between gap-4"><span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>{project.href ? <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.name}`} className="rounded-md p-1 text-muted-foreground transition hover:-translate-y-0.5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"><ArrowUpRight className="size-5" /></a> : <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60">Link needed</span>}</div>
-                <div className="mt-auto pt-20"><p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-4 text-3xl font-semibold tracking-tight lg:text-4xl">{project.name}</h3><p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground lg:text-lg lg:leading-8">{project.summary}</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-foreground/65">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
+                <div className="mt-auto pt-20"><p className="font-mono text-sm uppercase tracking-[0.16em] text-muted-foreground">{project.category}</p><h3 className="mt-4 text-3xl font-semibold tracking-tight lg:text-4xl">{project.name}</h3><p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground lg:text-xl lg:leading-9">{project.summary}</p><div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-sm text-foreground/70">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></div>
               </article>
             ))}
           </div>
