@@ -33,11 +33,13 @@ export default function ResumePage() {
           </a>
         </div>
 
-        <iframe
-          src={`${portfolio.resumeHref}#view=FitH`}
-          title="TJ Gribbin résumé"
-          className="h-[calc(100svh-15rem)] min-h-[42rem] w-full border border-border bg-white"
-        />
+        <div className="mx-auto max-w-[90rem] bg-muted/45 p-2 sm:p-4 lg:p-6">
+          <iframe
+            src={`${portfolio.resumeHref}#view=FitH`}
+            title="TJ Gribbin résumé"
+            className="resume-frame block h-[calc(100svh-17rem)] min-h-[42rem] w-full border-0 bg-neutral-200"
+          />
+        </div>
       </main>
     </>
   );
