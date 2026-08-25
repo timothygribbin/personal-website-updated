@@ -31,37 +31,42 @@ export default function ResumePage() {
             <ArrowLeft className="size-4" aria-hidden="true" /> Back to portfolio
           </Link>
 
-          <p className="mt-14 font-mono text-sm uppercase tracking-[0.18em] text-[var(--signal)]">
-            PDF / One page
-          </p>
-          <h1 className="mt-4 text-5xl font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl">
-            Résumé
-          </h1>
-          <p className="mt-6 max-w-md text-lg leading-8 text-muted-foreground">
-            Education, engineering experience, selected projects, and technical skills.
-          </p>
+          <div className="mt-14 grid gap-10 md:grid-cols-12 md:items-end md:gap-8">
+            <div className="md:col-span-7">
+              <p className="font-mono text-sm uppercase tracking-[0.18em] text-[var(--signal)]">
+                PDF / One page
+              </p>
+              <h1 className="mt-4 text-5xl font-semibold tracking-[-0.055em] sm:text-6xl lg:text-7xl">
+                Résumé
+              </h1>
+            </div>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a
-              href={portfolio.resumeHref}
-              download
-              className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-full px-6 text-lg")}
-            >
-              Download PDF <Download aria-hidden="true" />
-            </a>
-            <a
-              href={portfolio.resumeHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-2 py-2 text-base text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Open original <ExternalLink className="size-4" aria-hidden="true" />
-            </a>
+            <div className="md:col-span-5">
+              <p className="max-w-xl text-lg leading-8 text-muted-foreground">
+                Education, engineering experience, selected projects, and technical skills.
+              </p>
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <a
+                  href={portfolio.resumeHref}
+                  download
+                  className={cn(buttonVariants({ variant: "outline" }), "h-12 rounded-full px-6 text-lg")}
+                >
+                  Download PDF <Download aria-hidden="true" />
+                </a>
+                <a
+                  href={portfolio.resumeHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-2 py-2 text-base text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Open original <ExternalLink className="size-4" aria-hidden="true" />
+                </a>
+              </div>
+              <p className="mt-5 max-w-xl text-sm leading-6 text-muted-foreground/75">
+                Preview links open separately. Downloads retain the original formatting.
+              </p>
+            </div>
           </div>
-
-          <p className="mt-7 max-w-xl text-sm leading-6 text-muted-foreground/75">
-            Links in the preview open separately. The downloaded PDF retains its original formatting.
-          </p>
         </div>
 
         <section aria-label="Résumé preview" className="mx-auto mt-12 max-w-[78rem] bg-muted/35 p-2 sm:p-4 lg:p-5">
