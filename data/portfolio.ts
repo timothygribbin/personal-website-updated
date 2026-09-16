@@ -43,6 +43,24 @@ export const portfolio = {
   ],
   projects: [
     {
+      name: "Scrapper MMA",
+      category: "Live product · Solo build",
+      summary:
+        "A deployed fantasy MMA platform with real beta users, private leagues, market-priced picks, automated event settlement, and a normalized archive of 8,887 fights.",
+      technologies: [
+        "TypeScript",
+        "React",
+        "NestJS",
+        "PostgreSQL",
+        "Kysely",
+        "FastAPI",
+        "Vercel",
+        "Fly.io",
+      ],
+      href: "https://scrappermma.com/auth",
+      linkLabel: "Join the beta",
+    },
+    {
       name: "PITSTOP",
       category: "Collaborative product",
       summary:
@@ -56,22 +74,6 @@ export const portfolio = {
         "Firebase",
       ],
       href: "https://github.com/timothygribbin/Pitstop",
-    },
-    {
-      name: "AI UFC Judge",
-      category: "Machine learning analytics",
-      summary:
-        "A round-scoring analytics platform that combines UFCStats, official scorecards, and machine learning to estimate who is winning an MMA round from fight statistics.",
-      technologies: [
-        "Python",
-        "FastAPI",
-        "React",
-        "Vite",
-        "scikit-learn",
-        "Pydantic",
-        "Sportradar",
-      ],
-      href: "",
     },
     {
       name: "HopperHelps",

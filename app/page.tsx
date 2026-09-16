@@ -188,7 +188,7 @@ export default function Home() {
                       rel="noreferrer noopener"
                       className="inline-flex items-center gap-2 text-base font-medium transition-colors group-hover:text-[var(--signal)]"
                     >
-                      View project <ArrowUpRight className="size-4" />
+                      {project.linkLabel ?? "View project"} <ArrowUpRight className="size-4" />
                     </a>
                   ) : (
                     <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground/50">
