@@ -46,7 +46,7 @@ export const portfolio = {
       name: "Scrapper MMA",
       category: "Live product · Solo build",
       summary:
-        "A deployed fantasy MMA platform with real beta users, private leagues, market-priced picks, automated event settlement, and a normalized archive of 8,887 fights.",
+        "An independently designed and developed fantasy MMA platform, deployed with real beta users, private leagues, market-priced picks, automated event settlement, and a normalized archive of 8,887 fights.",
       technologies: [
         "TypeScript",
         "React",
