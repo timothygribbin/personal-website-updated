@@ -74,7 +74,7 @@ export default function ResumePage() {
         <section aria-label="Résumé preview" className="mx-auto mt-12 max-w-[78rem] bg-muted/35 p-2 sm:p-4 lg:p-5">
           <div className="relative mx-auto w-full max-w-[74.5rem] shadow-2xl shadow-black/25">
             <Image
-              src="/resume-preview.png"
+              src="/resume-preview-2026-09.png"
               alt="TJ Gribbin's one-page software engineering résumé"
               width={1788}
               height={2526}

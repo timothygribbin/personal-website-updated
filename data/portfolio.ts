@@ -109,7 +109,7 @@ export const portfolio = {
       items: ["PostgreSQL", "MySQL", "Redis", "AWS", "Terraform", "Docker"],
     },
   ],
-  resumeHref: "/Timothy-Gribbin-Resume-2026.pdf",
+  resumeHref: "/Timothy-Gribbin-Resume.pdf",
   footerLinks: [
     { label: "Email", href: "mailto:timothyjgribbin@gmail.com" },
     {
