@@ -14,11 +14,13 @@ export const metadata: Metadata = {
 };
 
 const resumeLinks = [
-  { label: "Email TJ Gribbin", href: "mailto:timothyjgribbin@gmail.com", left: "36.2265%", top: "6.5972%", width: "21.1134%", height: "1.5022%" },
-  { label: "View TJ Gribbin on GitHub", href: "https://github.com/timothygribbin", left: "58.9077%", top: "6.5972%", width: "5.5330%", height: "1.5022%" },
-  { label: "View TJ Gribbin on LinkedIn", href: "https://www.linkedin.com/in/timothy-gribbin/", left: "66.0086%", top: "6.5972%", width: "6.7604%", height: "1.5022%" },
-  { label: "View the PITSTOP repository", href: "https://github.com/timothygribbin/Pitstop", left: "23.3927%", top: "65.6702%", width: "15.1139%", height: "1.5022%" },
-  { label: "View the HopperHelps repository", href: "https://github.com/Algoltea/hopperhacksx", left: "47.7779%", top: "77.7831%", width: "15.1139%", height: "1.5022%" },
+  { label: "Visit TJ Gribbin's website", href: "https://tjgribbin.com", left: "29.0888%", top: "6.7338%", width: "12.7076%", height: "1.5022%" },
+  { label: "Email TJ Gribbin", href: "mailto:timothyjgribbin@gmail.com", left: "43.3642%", top: "6.7338%", width: "21.1134%", height: "1.5022%" },
+  { label: "View TJ Gribbin on GitHub", href: "https://github.com/timothygribbin", left: "66.0454%", top: "6.7338%", width: "5.5330%", height: "1.5022%" },
+  { label: "View TJ Gribbin on LinkedIn", href: "https://www.linkedin.com/in/timothy-gribbin/", left: "73.1463%", top: "6.7338%", width: "6.7604%", height: "1.5022%" },
+  { label: "Visit Scrapper MMA", href: "https://scrappermma.com", left: "6.0403%", top: "50.3984%", width: "12.5483%", height: "1.5022%" },
+  { label: "View the PITSTOP repository", href: "https://github.com/timothygribbin/Pitstop", left: "23.3927%", top: "65.0308%", width: "15.1139%", height: "1.5022%" },
+  { label: "View the HopperHelps repository", href: "https://github.com/Algoltea/hopperhacksx", left: "47.7779%", top: "77.9290%", width: "15.1139%", height: "1.5022%" },
 ];
 
 export default function ResumePage() {
