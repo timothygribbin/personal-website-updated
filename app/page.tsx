@@ -103,8 +103,8 @@ export default function Home() {
 
         <section id="experience" className="section-shell scroll-mt-24 bg-muted/20">
           <SectionHeading
-            eyebrow="01 / Experience"
-            title="Production work, measurable reach."
+            eyebrow="01 / Work"
+            title="Experience"
             description="Engineering experience building full-stack tools, backend integrations, and real-time systems used in production."
           />
 
