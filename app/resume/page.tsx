@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 };
 
 const resumeLinks = [
-  { label: "Visit TJ Gribbin's website", href: "https://tjgribbin.com", left: "29.0888%", top: "6.7338%", width: "12.7076%", height: "1.5022%" },
-  { label: "Email TJ Gribbin", href: "mailto:timothyjgribbin@gmail.com", left: "43.3642%", top: "6.7338%", width: "21.1134%", height: "1.5022%" },
-  { label: "View TJ Gribbin on GitHub", href: "https://github.com/timothygribbin", left: "66.0454%", top: "6.7338%", width: "5.5330%", height: "1.5022%" },
-  { label: "View TJ Gribbin on LinkedIn", href: "https://www.linkedin.com/in/timothy-gribbin/", left: "73.1463%", top: "6.7338%", width: "6.7604%", height: "1.5022%" },
-  { label: "Visit Scrapper MMA", href: "https://scrappermma.com", left: "6.0403%", top: "50.3984%", width: "12.5483%", height: "1.5022%" },
-  { label: "View the PITSTOP repository", href: "https://github.com/timothygribbin/Pitstop", left: "23.3927%", top: "65.0308%", width: "15.1139%", height: "1.5022%" },
-  { label: "View the HopperHelps repository", href: "https://github.com/Algoltea/hopperhacksx", left: "47.7779%", top: "77.9290%", width: "15.1139%", height: "1.5022%" },
+  { label: "Visit TJ Gribbin's website", href: "https://tjgribbin.com", left: "21.9%", top: "7.1%", width: "14.6%", height: "1.4%" },
+  { label: "Email TJ Gribbin", href: "mailto:timothyjgribbin@gmail.com", left: "37.5%", top: "7.1%", width: "22.8%", height: "1.4%" },
+  { label: "View TJ Gribbin on GitHub", href: "https://github.com/timothygribbin", left: "62.3%", top: "7.1%", width: "6.2%", height: "1.4%" },
+  { label: "View TJ Gribbin on LinkedIn", href: "https://www.linkedin.com/in/timothy-gribbin/", left: "70.1%", top: "7.1%", width: "7.5%", height: "1.4%" },
+  { label: "Visit Scrapper MMA", href: "https://scrappermma.com", left: "6.0%", top: "48.1%", width: "13.1%", height: "1.5%" },
+  { label: "View the PITSTOP repository", href: "https://github.com/timothygribbin/Pitstop", left: "23.5%", top: "64.3%", width: "15.2%", height: "1.5%" },
+  { label: "View the HopperHelps repository", href: "https://github.com/Algoltea/hopperhacksx", left: "47.8%", top: "77.4%", width: "15.2%", height: "1.5%" },
 ];
 
 export default function ResumePage() {
@@ -74,7 +74,7 @@ export default function ResumePage() {
         <section aria-label="Résumé preview" className="mx-auto mt-12 max-w-[78rem] bg-muted/35 p-2 sm:p-4 lg:p-5">
           <div className="relative mx-auto w-full max-w-[74.5rem] shadow-2xl shadow-black/25">
             <Image
-              src="/resume-preview-2026-09.png"
+              src="/resume-preview-2026-10.png"
               alt="TJ Gribbin's one-page software engineering résumé"
               width={1788}
               height={2526}
